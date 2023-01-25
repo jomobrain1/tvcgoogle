@@ -71,3 +71,14 @@ footer{
     color: #333;
 }
 
+.links_useful a{
+ color: #fff;
+ margin: 10px 5px;
+ background-color: steelblue;
+ padding: 5px 10px;
+ transition:all 0.8s ease;
+}
+.links_useful a:hover{
+    background-color: black;
+
+}
