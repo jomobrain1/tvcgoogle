@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
     <title>TVC google developer training</title>
 </head>
 <body>
    <section class="container">
-    <h1>Google1 Developer Training</h1>
+    <h1>Google Developer Training</h1>
     <p>
         click the button below to view the google android course with compose. Ensure you get the badges . <b>Work Hard !!!!</b>
     </p>
@@ -48,6 +50,66 @@
             5: Jetpack compose
         </pre>
      </div>
+     <h2>Greeting Code</h2>
+     <pre>
+
+      <code>
+        package com.example.background
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.background.ui.theme.BackgroundTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+//                   BirthdayGreetingWithText(message = "jomobrain1Beast")
+                }
+
+        }
+    }
+}
+
+@Composable
+fun BirthdayGreetingWithText(message: String,from: String) {
+    Column() {
+        Text(
+            text = "hbd $message",
+            fontSize = 23.sp
+        )
+        Text(
+            text = from,
+            fontSize = 14.sp
+        )
+
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun BirthdayCardPreview() {
+
+        BirthdayGreetingWithText("jomo","ray")
+
+}
+      </code>
+     </pre>
     </section>
    <footer>
 
@@ -57,4 +119,12 @@
    
 
 </body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el);
+  });
+});
+</script>
 </html>
